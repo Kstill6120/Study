@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="shortcut icon" href="img/download.png">
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="marquee">
+            <span><i class="fa-solid fa-truck-fast"></i>FREESHIP đơn từ 250K</span>
+            <span><i class="fa-solid fa-truck-fast"></i>FREESHIP cho khách hàng lần đầu mua</span>
+            <span>VOUCHER 10% tối đa 10K</span>
+            <span>VOUCHER giảm 30K đơn từ 599K</span>
+            <span>VOUCHER giảm 70K đơn từ 799K</span>
+            <span><i class="fa-solid fa-arrow-rotate-right"></i>Đổi trả 30 ngày</span>
+            <span><i class="fa-solid fa-percent"></i>Ưu đãi thành viên</span>
+            <span><i class="fa-solid fa-bolt"></i>FLASH SALE mỗi ngày</span>
+            <span><i class="fa-solid fa-truck"></i> Giao hàng toàn quốc</span>
+            <span><i class="fa-solid fa-headset"></i>Hỗ trợ 24/7</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="#" class="logo_CatShop">CAT SHOP</a>
+        </div>
+        <div class="search-bar">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm...">
+                <div id="search-results" class="search-results"></div>
+                <button id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <ul class="header-icons">
+            <li><a href="register.html"><i class="fa fa-user"></i>Đăng ký</a></li>
+            <li><a href="login.html"><i class="fa fa-user"></i>Đăng nhập</a></li>
+            <li><button class="logout-btn" style="display: none;"><i class="fa fa-sign-out-alt"></i>Đăng xuất</button></li>
+            <li><a href="cart.html"><i class="fa fa-shopping-cart"></i>Giỏ hàng</a></li>
+        </ul>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li class="dropdown">
+                <a href="#"><i class="fa fa-search"></i>HÀNG MỚI</a>
+                <ul class="dropdown-menu">
+                    <li><a href="hangmoi.html">Hàng mới về</a></li>
+                    <li><a href="hanggioihan.html">Hàng giới hạn</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">SẢN PHẨM<i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="full.html">Tất cả sản phẩm</a></li>
+                    <li><a href="hangbanchay.html">Hàng bán chạy</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">ÁO NỮ<i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="aothun.html">Áo thun</a></li>
+                    <li><a href="somi.html">Áo sơ mi</a></li>
+                    <li><a href="crop.html">Áo croptop</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">QUẦN NỮ<i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="jeans.html">Quần jeans</a></li>
+                    <li><a href="short.html">Quần short</a></li>
+                    <li><a href="baggy.html">Quần baggy</a></li>
+                    <li><a href="rong.html">Quần ống rộng</a></li>
+                    <li><a href="tay.html">Quần tây</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">PHỤ KIỆN<i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="non.html">Nón</a></li>
+                    <li><a href="tui.html">Túi</a></li>
+                    <li><a href="trangsuc.html">Trang sức</a></li>
+                    <li><a href="kinh.html">Mắt kính</a></li>
+                    <li><a href="toc.html">Phụ kiện tóc</a></li>
+                </ul>
+            </li>
+            <li><a href="sales.html" style="color: red;">SALE</a></li>
+            <li class="dropdown">
+                <a href="#">VÁY NỮ<i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="set.html">Set váy</a></li>
+                    <li><a href="vay.html">Chân váy</a></li>
+                    <li><a href="dai.html">Váy dài</a></li>
+                </ul>
+            </li>
+            <li><a href="tinthoitrang.html" onclick="showFashionSection()">TIN THỜI TRANG</a></li>
+        </ul>
+    </nav>
+
+    <!-- Banner -->
+    <div class="banner-slider">
+        <div class="slides">
+            <img src="img/slide1.jpg" alt="Banner 1" class="slide active">
+            <img src="img/slide2.png" alt="Banner 2" class="slide">
+            <img src="img/slide3.png" alt="Banner 3" class="slide">
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+
+    <!-- Introduce Section -->
+    <section class="introduce" id="about">
+        <div class="container">
+            <div class="introduce-content">
+                <div class="introduce-text">
+                    <h2>Về CAT SHOP</h2>
+                    <p>CAT SHOP là thương hiệu thời trang hàng đầu, mang đến cho bạn những sản phẩm chất lượng cao với thiết kế hiện đại và phong cách độc đáo. Chúng tôi cam kết mang đến trải nghiệm mua sắm tuyệt vời nhất cho khách hàng.</p>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Chất lượng cao</li>
+                        <li><i class="fas fa-check"></i> Thiết kế độc đáo</li>
+                        <li><i class="fas fa-check"></i> Giá cả hợp lý</li>
+                        <li><i class="fas fa-check"></i> Dịch vụ tận tâm</li>
+                    </ul>
+                </div>
+                <div class="introduce-image">
+                    <div class="image-placeholder">
+                        <img src="img/download.png" alt="store">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ưu đãi dành cho bạn -->
+    <section class="offers">
+        <h2>ƯU ĐÃI DÀNH CHO BẠN</h2>
+        <!--Voucher độc quyền-->
+        <h3>🎁 Voucher độc quyền</h3>
+        <div class="offer-list">
+            <div class="offer-card">
+                <div class="offer-code">MAY10</div>
+                <div class="offer-details">
+                    <strong>GIẢM 10%</strong>
+                    <p>giảm 10% (tối đa 10K)</p>
+                    <p><strong>Mã:</strong> MAY10</p>
+                    <p>HSD: 30/06/2025</p>
+                    <button>Sao chép mã</button>
+                </div>
+            </div>
+            <div class="offer-card">
+                <div class="offer-code">MAY100</div>
+                <div class="offer-details">
+                    <strong>GIẢM 10%</strong>
+                    <p>đơn từ 750K (số lượng có hạn)</p>
+                    <p><strong>Mã:</strong> MAY100</p>
+                    <p>HSD: 30/06/2025</p>
+                    <button>Sao chép mã</button>
+                </div>
+            </div>
+            <div class="offer-card">
+                <div class="offer-code">MAY30</div>
+                <div class="offer-details">
+                    <strong>GIẢM 30K</strong>
+                    <p>đơn từ 599K (số lượng có hạn)</p>
+                    <p><strong>Mã:</strong> MAY30</p>
+                    <p>HSD: 30/06/2025</p>
+                    <button>Sao chép mã</button>
+                </div>
+            </div>
+            <div class="offer-card">
+                <div class="offer-code">MAY70</div>
+                <div class="offer-details">
+                    <strong>GIẢM 70K</strong>
+                    <p>đơn từ 899K (số lượng có hạn)</p>
+                    <p><strong>Mã:</strong> MAY70</p>
+                    <p>HSD: 30/06/2025</p>
+                    <button>Sao chép mã</button>
+                </div>
+            </div>
+            <div class="offer-card">
+                <div class="offer-code">MAY100</div>
+                <div class="offer-details">
+                    <strong>GIẢM 100K</strong>
+                    <p>đơn từ 1199K (số lượng có hạn)</p>
+                    <p><strong>Mã:</strong> MAY100</p>
+                    <p>HSD: 30/06/2025</p>
+                    <button>Sao chép mã</button>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <!--Freeship-->
+        <h3>🚚 Freeship</h3>
+        <div class="offer-list">
+            <div class="offer-card">
+                <div class="offer-code">MAY100</div>
+                <div class="offer-details">
+                    <strong>GIẢM 70K</strong>
+                    <p>đơn hàng trên 1.000đ (số lượng có hạn)</p>
+                    <p><strong>Mã:</strong> MAY100</p>
+                    <p>HSD: Áp dụng trong 1 ngày kể từ khi lấy mã</p>
+                    <button>Sao chép mã</button>
+                </div>
+            </div>
+            <div class="offer-card">
+                <div class="offer-code">MAY10</div>
+                <div class="offer-details">
+                    <strong>GIẢM 100%</strong>
+                    <p>khách hàng mới, lần đầu mua hàng</p>
+                    <p><strong>Mã:</strong> MAY10</p>
+                    <p>HSD: 30/06/2025</p>
+                    <button>Sao chép mã</button>
+                </div>
+            </div>
+            <div class="offer-card">
+                <div class="offer-code">MAY30</div>
+                <div class="offer-details">
+                    <strong>GIẢM 49K</strong>
+                    <p>đơn từ 250K (số lượng có hạn)</p>
+                    <p><strong>Mã:</strong> MAY30</p>
+                    <p>HSD: 30/06/2025</p>
+                    <button>Sao chép mã</button>
+                </div>
+            </div>
+            <div class="offer-card">
+                <div class="offer-code">MAY70</div>
+                <div class="offer-details">
+                    <strong>GIẢM 100K</strong>
+                    <p>đơn từ 500K (số lượng có hạn)</p>
+                    <p><strong>Mã:</strong> MAY70</p>
+                    <p>HSD: 30/06/2025</p>
+                    <button>Sao chép mã</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Hàng mới về</h2>
+            <div class="products-grid">
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="img/aothun.jpg" alt="Áo Thun Basic">
+                        <div class="product-overlay">
+                            <a href="product-details/thunbasic.html" class="quick-view-btn text-decoration-none text-white">Xem Nhanh</a>
+                            <button class="add-to-cart-btn"
+                                    data-id="1"
+                                    data-name="Áo Thun Basic"
+                                    data-price="299000₫"
+                                    data-image="img/aothun.jpg">
+                                Thêm Vào Giỏ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Áo Thun Basic</h3>
+                        <p class="product-price">299,000₫</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="img/aosomi.jpg" alt="Áo Sơ Mi Công Sở">
+                        <div class="product-overlay">
+                            <a href="product-details/somicongso.html" class="quick-view-btn text-decoration-none text-white">Xem Nhanh</a>
+                            <button class="add-to-cart-btn"
+                                    data-id="2"
+                                    data-name="Áo Sơ Mi Công Sở"
+                                    data-price="599000₫"
+                                    data-image="img/aosomi.jpg">
+                                Thêm Vào Giỏ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Áo Sơ Mi Công Sở</h3>
+                        <p class="product-price">599,000₫</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="img/vayhoa.jpg" alt="Váy Hoa Mùa Hè">
+                        <div class="product-overlay">
+                            <a href="product-details/vayhoa.html" class="quick-view-btn text-decoration-none text-white">Xem Nhanh</a>
+                            <button class="add-to-cart-btn"
+                                    data-id="3"
+                                    data-name="Váy Hoa Mùa Hè"
+                                    data-price="449000₫"
+                                    data-image="img/vayhoa.jpg">
+                                Thêm Vào Giỏ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Váy Hoa Mùa Hè</h3>
+                        <p class="product-price">449,000₫</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="img/hoodie.jpg" alt="Áo Hoodie Thể Thao">
+                        <div class="product-overlay">
+                            <a href="product-details/hoodie.html" class="quick-view-btn text-decoration-none text-white">Xem Nhanh</a>
+                            <button class="add-to-cart-btn"
+                                    data-id="4"
+                                    data-name="Áo Hoodie Thể Thao"
+                                    data-price="699000₫"
+                                    data-image="img/hoodie.jpg">
+                                Thêm Vào Giỏ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Áo Hoodie Thể Thao</h3>
+                        <p class="product-price">699,000₫</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sale Products -->
+    <section class="sale-products">
+        <div class="container">
+            <h2 class="section-title">SALE</h2>
+            <p id="countdown">Kết thúc vào: Thứ 5, 12 tháng 6 năm 2025<br>10:15am</p> <!--THỜIGIANSALE-->
+            <div class="products-grid">
+                <div class="product-card sale">
+                    <div class="sale-badge">-30%</div>
+                    <div class="product-image">
+                        <img src="img/chanvay.jpg" alt="Chân váy chữ A">
+                        <div class="product-overlay">
+                            <a href="product-details/vay1.html" class="quick-view-btn text-decoration-none text-white">Xem Nhanh</a>
+                            <button class="add-to-cart-btn"
+                                    data-id="5"
+                                    data-name="Chân váy chữ A"
+                                    data-price="279000₫"
+                                    data-image="img/chanvay.jpg">
+                                Thêm Vào Giỏ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Chân váy chữ A</h3>
+                        <p class="product-price">
+                            <span class="original-price">399,000₫</span>
+                            <span class="sale-price">279,000₫</span>
+                        </p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card sale">
+                    <div class="sale-badge">-25%</div>
+                    <div class="product-image">
+                        <img src="img/jean.jpg" alt="Quần Jean Skinny">
+                        <div class="product-overlay">
+                            <a href="product-details/jeanskinny.html" class="quick-view-btn text-decoration-none text-white">Xem Nhanh</a>
+                            <button class="add-to-cart-btn"
+                                    data-id="6"
+                                    data-name="Quần Jean Skinny"
+                                    data-price="449000₫"
+                                    data-image="img/jean.jpg">
+                                Thêm Vào Giỏ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Quần Jean Skinny</h3>
+                        <p class="product-price">
+                            <span class="original-price">599,000₫</span>
+                            <span class="sale-price">449,000₫</span>
+                        </p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card sale">
+                    <div class="sale-badge">-40%</div>
+                    <div class="product-image">
+                        <img src="img/dam.jpg" alt="Đầm Công Sở">
+                        <div class="product-overlay">
+                            <a href="product-details/damcongso.html" class="quick-view-btn text-decoration-none text-white">Xem Nhanh</a>
+                            <button class="add-to-cart-btn"
+                                    data-id="7"
+                                    data-name="Đầm Công Sở"
+                                    data-price="479000₫"
+                                    data-image="img/dam.jpg">
+                                Thêm Vào Giỏ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Đầm Công Sở</h3>
+                        <p class="product-price">
+                            <span class="original-price">799,000₫</span>
+                            <span class="sale-price">479,000₫</span>
+                        </p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POPUP QUẢNG CÁO -->
+    <div id="popup-ad">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <img src="img/SOCIAL MEDIA POST - CALEELILOU.jpg" alt="Quảng Cáo">
+            <h2>🔥 MUA 1 TẶNG 1 🔥</h2>
+            <p>Áp dụng toàn bộ sản phẩm nữ từ 13/6 - 26/6</p>
+            <button class="popup-button">Mua ngay</button>
+        </div>
+    </div>
+
+    <!-- Chatbox -->
+    <div id="chat-toggle-container">
+        <div id="chat-greeting">Xin chào, CAT SHOP có thể giúp gì cho bạn?</div>
+        <button id="chat-toggle">💬</button>
+    </div>
+    <div id="chat-box">
+        <div id="chat-header">Hỗ trợ Cat Shop</div>
+        <div id="chat-body">
+            <div class="quick-buttons">
+                <button data-msg="Tôi muốn đổi trả">Tôi muốn đổi trả</button>
+                <button data-msg="Tôi cần tư vấn size">Tôi cần tư vấn size</button>
+                <button data-msg="Vấn đề giao hàng">Vấn đề giao hàng</button>
+                <button data-msg="Khác">Khác</button>
+            </div>
+            <div id="messages">
+                <div class="bot-msg">👋 Xin chào! Bạn cần hỗ trợ gì?</div>
+            </div>
+            <div id="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Nhập tin nhắn..." />
+                <button id="send-btn">Gửi</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo_footer">
+            <img src="img/download.png" alt="" class="logo_footerIcon">
+            <p class="title_footer">Cat Shop</p>
+        </div>
+        <ul class="contact_footer">
+            <li>
+                <div class="item_title_contact">
+                    <p class="title_contact">LIÊN HỆ</p>
+
+                </div>
+                <div class="content_contact">
+                    <ul>
+                        <li class="address_contact"><i class="fa-solid fa-location-dot"></i>123 CAT SHOP Street, Q.1, TP.HCM</li>
+                        <li class="address_contact"><i class="fa-solid fa-phone"></i> Hotlline: 0123456789</li>
+                        <li class="address_contact"><i class="fa-solid fa-envelope"></i> Email: support@candystore.vn</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="item_title_contact">
+                    <p class="title_contact">CHÍNH SÁCH</p>
+
+                </div>
+                <div class="content_contact">
+                    <ul>
+                        <li class="address_contact"> <a href="src/CSTV.html">Chính sách thành viên</a></li>
+                        <li class="address_contact"><a href="src/CSDT.html">Chính sách đổi trả</a></li>
+                        <li class="address_contact"><a href="src/CSVC.html">Chính sách vận chuyển</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="item_title_contact">
+                    <p class="title_contact">ĐĂNG KÝ NHẬN TIN</p>
+                </div>
+                <div class="content_contact">
+                    <form id="newsletterForm" onsubmit="return validateEmail()" style="display: flex; flex-direction: column; gap: 10px;">
+                        <input type="email" id="newsletterEmail" placeholder="Nhập email của bạn" required style="padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+                        <button type="submit" style="padding: 8px 16px; background-color: #000; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Đăng ký</button>
+                        <p id="emailMessage" style="color: red; font-size: 0.9em;"></p>
+                    </form>
+                </div>
+            </li>
+            <li>
+                <div class="item_title_contact">
+                    <p class="title_contact">KẾT NỐI</p>
+
+                </div>
+                <div class="content_contact">
+                    <ul style="display: flex;gap:20px">
+                        <li class="address_contact"><i class="fa-brands fa-facebook"></i> </li>
+                        <li class="address_contact"><i class="fa-brands fa-instagram"></i> </li>
+                        <li class="address_contact"><i class="fa-brands fa-tiktok"></i> </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+    </footer>
+
+    <script src="js/dropdown.js"></script>
+
+    <script src="js/banner.js"></script>
+
+    <script src="js/uu_dai.js"></script>
+
+    <script src="js/thoi_gian_SALE.js"></script>
+
+    <script src="js/popup.js"></script>
+
+    <script src="js/chat_box.js"></script>
+
+    <script src="js/cac_thao_tac_gio_hang.js"></script>
+
+    <script src="js/searchproducts.js"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            initSearch(products);
+        });
+    </script>
+
+
+</body>
+
+</html>

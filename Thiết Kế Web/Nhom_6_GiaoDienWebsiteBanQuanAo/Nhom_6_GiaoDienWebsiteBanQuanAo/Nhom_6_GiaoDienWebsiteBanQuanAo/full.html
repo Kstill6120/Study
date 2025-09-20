@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="shortcut icon" href="img/download.png">
+    <style>
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #ff6699;
+            padding: 10px 20px;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background-color: #ff3366;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="marquee">
+            <span><i class="fa-solid fa-truck-fast"></i>FREESHIP đơn từ 250K</span>
+            <span><i class="fa-solid fa-truck-fast"></i>FREESHIP cho khách hàng lần đầu mua</span>
+            <span>VOUCHER 10% tối đa 10K</span>
+            <span>VOUCHER giảm 30K đơn từ 599K</span>
+            <span>VOUCHER giảm 70K đơn từ 799K</span>
+            <span><i class="fa-solid fa-arrow-rotate-right"></i>Đổi trả 30 ngày</span>
+            <span><i class="fa-solid fa-percent"></i>Ưu đãi thành viên</span>
+            <span><i class="fa-solid fa-bolt"></i>FLASH SALE mỗi ngày</span>
+            <span><i class="fa-solid fa-truck"></i> Giao hàng toàn quốc</span>
+            <span><i class="fa-solid fa-headset"></i>Hỗ trợ 24/7</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html" class="logo_CatShop">CAT SHOP</a>
+        </div>
+        <div class="search-bar">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm...">
+                <button id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+            <div id="search-results" class="search-results"></div>
+        </div>
+        <ul class="header-icons">
+            <li><a href="register.html"><i class="fa fa-user"></i>Đăng ký</a></li>
+            <li><a href="login.html"><i class="fa fa-user"></i>Đăng nhập</a></li>
+            <li><button class="logout-btn" style="display: none;"><i class="fa fa-sign-out-alt"></i>Đăng xuất</button></li>
+            <li><a href="cart.html"><i class="fa fa-shopping-cart"></i>Giỏ hàng</a></li>
+        </ul>
+    </header>
+
+    <!-- Sản phẩm -->
+    <div class="container py-5">
+        <h2 class="text-center mb-4">TẤT CẢ SẢN PHẨM</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            <!-- ÁO THUN FORM RỘNG -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/aothun.jpg" class="card-img-top" alt="Áo Thun Form Rộng" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Áo Thun Form Rộng</h5>
+                            <p class="text-danger fw-bold fs-5">199,000₫</p>
+                            <div class="text-warning mb-2">★★★★★</div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <a href="product-details/thunbasic.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ÁO SƠ MI CÔNG SỞ -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/aosomi.jpg" class="card-img-top" alt="Áo Sơ Mi Công Sở" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Áo Sơ Mi Công Sở</h5>
+                            <p class="text-danger fw-bold fs-5">599,000₫</p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <a href="product-details/somicongso.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- VÁY HOA MÙA HÈ -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/vayhoa.jpg" class="card-img-top" alt="Váy Hoa Mùa Hè" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Váy Hoa Mùa Hè</h5>
+                            <p class="text-danger fw-bold fs-5">449,000₫</p>
+                            <div class="text-warning mb-2">★★★★★</div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <a href="product-details/vayhoa.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- CHÂN VÁY CHỮ A -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/chanvay.jpg" class="card-img-top" alt="Chân váy chữ A" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Chân váy chữ A</h5>
+                            <p class="text-danger fw-bold fs-5">
+                                <del class="text-muted">399,000₫</del>
+                                <span class="ms-2">279,000₫</span>
+                            </p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <a href="product-details/vay1.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- QUẦN JEAN SKINNY -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/jean.jpg" class="card-img-top" alt="Quần Jean Skinny" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Quần Jean Skinny</h5>
+                            <p class="text-danger fw-bold fs-5">
+                                <del class="text-muted">599,000₫</del>
+                                <span class="ms-2">449,000₫</span>
+                            </p>
+                            <div class="text-warning mb-2">★★★★★</div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <a href="product-details/jeanskinny.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ÁO THUN ÔM NỮ -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/thunom.jpg" class="card-img-top" alt="Áo thun ôm nữ" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Áo thun ôm nữ</h5>
+                            <p class="text-danger fw-bold fs-5">199,000₫</p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <a href="product-details/thunom.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ÁO SƠ MI TRẮNG TAY DÀI -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/somi.jpg" class="card-img-top" alt="Áo sơ mi trắng tay dài" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Áo sơ mi trắng tay dài</h5>
+                            <p class="text-danger fw-bold fs-5">289,000₫</p>
+                            <div class="text-warning mb-2">★★★★★</div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <a href="product-details/somitrang.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ÁO CROP CỔ VUÔNG -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/cropvuong.jpg" class="card-img-top" alt="Áo croptop cổ vuông" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Áo croptop cổ vuông</h5>
+                            <p class="text-danger fw-bold fs-5">219,000₫</p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <a href="product-details/cropcovuong.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ÁO CROPTOP THỂ THAO -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/aocropthethao.jpg" class="card-img-top" alt="Áo croptop thể thao" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Áo croptop thể thao</h5>
+                            <p class="text-danger fw-bold fs-5">249,000₫</p>
+                            <div class="text-warning mb-2">★★★☆☆</div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <a href="product-details/cropthethao.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ÁO THUN MÈO -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/aothunmeo.jpg" class="card-img-top" alt="Áo thun in hình mèo" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Áo thun in hình mèo</h5>
+                            <p class="text-danger fw-bold fs-5">209,000₫</p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <a href="product-details/thunmeo.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ÁO SƠ MI CARO -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/aosomicaro.jpg" class="card-img-top" alt="Áo sơ mi caro nữ" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Áo sơ mi caro nữ</h5>
+                            <p class="text-danger fw-bold fs-5">259,000₫</p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <a href="product-details/somicaro.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- QUẦN JEANS ỐNG LOE -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/jeans2.jpg" class="card-img-top" alt="Quần Jeans Ống Loe" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Quần Jeans Ống Loe</h5>
+                            <p class="text-danger fw-bold fs-5">379,000₫</p>
+                            <div class="text-warning mb-2">★★★★★</div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <a href="product-details/jeansloe.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- QUẦN SHORT DENIM NỮ -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/short1.jpg" class="card-img-top" alt="Quần Short Denim Nữ" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Quần Short Denim Nữ</h5>
+                            <p class="text-danger fw-bold fs-5">199,000₫</p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <a href="product-details/shortdenim.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- QUẦN SHORT LƯNG CAO -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/short2.jpg" class="card-img-top" alt="Quần Short Lưng Cao" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Quần Short Lưng Cao</h5>
+                            <p class="text-danger fw-bold fs-5">219,000₫</p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <a href="product-details/shortcao.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- QUẦN SHORT KAKI -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/shortkaki.jpg" class="card-img-top" alt="Quần short kaki" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Quần short kaki</h5>
+                            <p class="text-danger fw-bold fs-5">189,000₫</p>
+                            <div class="text-warning mb-2">★★★☆☆</div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-center mt-3">
+                            <a href="product-details/shortkaki.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm vào giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- QUẦN BAGGY ĐEN -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/baggy1.jpg" class="card-img-top" alt="Quần Baggy Đen" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Quần Baggy Đen</h5>
+                            <p class="text-danger fw-bold fs-5">329,000₫</p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <a href="product-details/baggyden.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- QUẦN BAGGY CẠP THẤP -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/baggy2.jpg" class="card-img-top" alt="Quần Baggy Cạp Thấp" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Quần Baggy Cạp Thấp</h5>
+                            <p class="text-danger fw-bold fs-5">309,000₫</p>
+                            <div class="text-warning mb-2">★★★☆☆</div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <a href="product-details/baggythap.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- QUẦN ỐNG RỘNG LƯNG CAO -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/rong1.jpg" class="card-img-top" alt="Quần Ống Rộng Lưng Cao" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Quần Ống Rộng Lưng Cao</h5>
+                            <p class="text-danger fw-bold fs-5">299,000₫</p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <a href="product-details/rongcao.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- QUẦN ỐNG RỘNG TRƠN -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/rong2.jpg" class="card-img-top" alt="Quần Ống Rộng Trơn" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Quần Ống Rộng Trơn</h5>
+                            <p class="text-danger fw-bold fs-5">289,000₫</p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <a href="product-details/rongtron.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- QUẦN TÂY CÔNG SỞ -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/tay1.jpg" class="card-img-top" alt="Quần Tây Công Sở" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Quần Tây Công Sở</h5>
+                            <p class="text-danger fw-bold fs-5">319,000₫</p>
+                            <div class="text-warning mb-2">★★★★★</div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <a href="product-details/taycongso.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- QUẦN TÂY BASIC -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/tay2.jpg" class="card-img-top" alt="Quần Tây Basic" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Quần Tây Basic</h5>
+                            <p class="text-danger fw-bold fs-5">339,000₫</p>
+                            <div class="text-warning mb-2">★★★★★</div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <a href="product-details/taybasic.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- NÓN LƯỠI TRAI BASIC -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/non1.jpg" class="card-img-top" alt="Nón lưỡi trai basic" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Nón lưỡi trai basic</h5>
+                            <p class="text-danger fw-bold fs-5">129,000₫</p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-center mt-3">
+                            <a href="product-details/nonluoitrai.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- NÓN BUCKET VẢI -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/non2.jpg" class="card-img-top" alt="Nón bucket vải" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Nón bucket vải</h5>
+                            <p class="text-danger fw-bold fs-5">159,000₫</p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-center mt-3">
+                            <a href="product-details/nonvai.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- TÚI XÁCH CÁ TÍNH -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/tui1.jpg" class="card-img-top" alt="Túi xách cá tính" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Túi xách cá tính</h5>
+                            <p class="text-danger fw-bold fs-5">229,000₫</p>
+                            <div class="text-warning mb-2">★★★★★</div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-center mt-3">
+                            <a href="product-details/tuido.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- TÚI XÁCH CÔNG SỞ -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/tui2.jpg" class="card-img-top" alt="Túi xách công sở" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Túi xách công sở</h5>
+                            <p class="text-danger fw-bold fs-5">189,000₫</p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-center mt-3">
+                            <a href="product-details/tuicongso.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- TÚI XÁCH NỮ -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/tuinu.jpg" class="card-img-top" alt="Túi xách nữ" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Túi xách nữ</h5>
+                            <p class="text-danger fw-bold fs-5">349,000₫</p>
+                            <div class="text-warning mb-2">★★★★★</div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-center mt-3">
+                            <a href="product-details/tuinu.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm vào giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- DÂY CHUYỀN THIÊN NGA -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/bac1.jpg" class="card-img-top" alt="Dây chuyền thiên nga" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Dây chuyền thiên nga</h5>
+                            <p class="text-danger fw-bold fs-5">99,000₫</p>
+                            <div class="text-warning mb-2">★★★★★</div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-center mt-3">
+                            <a href="product-details/daychuyen.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- VÒNG TAY ĐÁ NHỎ -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/bac2.jpg" class="card-img-top" alt="Vòng tay đá nhỏ" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Vòng tay đá nhỏ</h5>
+                            <p class="text-danger fw-bold fs-5">129,000₫</p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-center mt-3">
+                            <a href="product-details/vongtay.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- KÍNH MẮT THỜI TRANG -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/kinh1.jpg" class="card-img-top" alt="Kính mát thời trang" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Kính mát thời trang</h5>
+                            <p class="text-danger fw-bold fs-5">159,000₫</p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-center mt-3">
+                            <a href="product-details/kinhmat.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- KÍNH MẮT TRÒN CỔ ĐIỂN -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/kinh2.jpg" class="card-img-top" alt="Kính mắt tròn cổ điển" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Kính mắt tròn cổ điển</h5>
+                            <p class="text-danger fw-bold fs-5">179,000₫</p>
+                            <div class="text-warning mb-2">★★★☆☆</div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-center mt-3">
+                            <a href="product-details/kinhtron.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- KÍNH MẮT MÈO -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/kinhmeo.jpg" class="card-img-top" alt="Kính mắt mèo" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Kính mắt mèo</h5>
+                            <p class="text-danger fw-bold fs-5">199,000₫</p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-center mt-3">
+                            <a href="product-details/kinhmeo.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm vào giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- CÀI TÓC NƠ VẢI -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/toc1.jpg" class="card-img-top" alt="Cài tóc nơ vải" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Cài tóc nơ vải</h5>
+                            <p class="text-danger fw-bold fs-5">19,000₫</p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-center mt-3">
+                            <a href="product-details/tocno.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- KẸP TÓC HOA LILY -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/toc2.jpg" class="card-img-top" alt="Kẹp tóc hoa Lily" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Kẹp tóc hoa Lily</h5>
+                            <p class="text-danger fw-bold fs-5">19,000₫</p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-center mt-3">
+                            <a href="product-details/toclily.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- BỜM TÓC NỮ-->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/bomtoc.jpg" class="card-img-top" alt="Bờm tóc nữ" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Bờm tóc nữ</h5>
+                            <p class="text-danger fw-bold fs-5">89,000₫</p>
+                            <div class="text-warning mb-2">★★★☆☆</div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-center mt-3">
+                            <a href="product-details/bomtoc.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm vào giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- SET YẾM VÁY KÈM ÁO SƠ MI TAY PHỒNG -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/set1.jpg" class="card-img-top" alt="Set yếm váy kèm áo sơ mi tay phồng" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Set yếm váy kèm áo sơ mi tay phồng</h5>
+                            <p class="text-danger fw-bold fs-5">359,000₫</p>
+                            <div class="text-warning mb-2">★★★★★</div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-center mt-3">
+                            <a href="product-details/setphong.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- SET ĐỒ TRẺ TRUNG -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/set2.jpg" class="card-img-top" alt="Set đồ trẻ trung" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Set đồ trẻ trung</h5>
+                            <p class="text-danger fw-bold fs-5">389,000₫</p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-center mt-3">
+                            <a href="product-details/settre.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- CHÂN VÁY XẾP LY NGẮN -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/vay1.jpg" class="card-img-top" alt="Chân váy xếp ly ngắn" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Chân váy xếp ly ngắn</h5>
+                            <p class="text-danger fw-bold fs-5">219,000₫</p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-center mt-3">
+                            <a href="product-details/vayxep.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ĐẦM CÔNG SỞ -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card sale">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/dam.jpg" class="card-img-top" alt="Đầm công sở" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Đầm công sở</h5>
+                            <p class="text-danger fw-bold fs-5">
+                                <del class="text-muted">799,000₫</del>
+                                <span class="ms-2">479,000₫</span>
+                            </p>
+                            <div class="text-warning mb-2">★★★★★</div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-center mt-3">
+                            <a href="product-details/damcongso.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- CHÂN VÁY JEAN NGẮN -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/vayjeans.jpg" class="card-img-top" alt="Chân váy jean ngắn" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Chân váy jean ngắn</h5>
+                            <p class="text-danger fw-bold fs-5">259,000₫</p>
+                            <div class="text-warning mb-2">★★★★☆</div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-center mt-3">
+                            <a href="product-details/vayjeans.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- VÁY DÀI BẠC HÀ NỮ TÍNH -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/dai1.jpg" class="card-img-top" alt="Váy dài bạc hà nữ tính" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Váy dài bạc hà nữ tính</h5>
+                            <p class="text-danger fw-bold fs-5">379,000₫</p>
+                            <div class="text-warning mb-2">★★★★★</div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-center mt-3">
+                            <a href="product-details/vaydaibacha.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- VÁY MAXI NĂNG ĐỘNG -->
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm border-0 product-card">
+                    <div class="position-relative overflow-hidden">
+                        <img src="img/dai2.jpg" class="card-img-top" alt="Váy maxi năng động" style="transition: transform 0.3s ease;">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-semibold">Váy maxi năng động</h5>
+                            <p class="text-danger fw-bold fs-5">399,000₫</p>
+                            <div class="text-warning mb-2">★★★★★</div>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-center mt-3">
+                            <a href="product-details/vaymaxi.html" class="btn btn-outline-dark btn-sm px-4">Xem</a>
+                            <a href="#" class="btn btn-danger btn-sm px-4">Thêm Vào Giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="index.html" class="back-link">← Quay lại trang chủ</a>
+    </div>
+
+    <!-- Chatbox -->
+    <div id="chat-toggle-container">
+        <div id="chat-greeting">Xin chào, CAT SHOP có thể giúp gì cho bạn?</div>
+        <button id="chat-toggle">💬</button>
+    </div>
+    <div id="chat-box">
+        <div id="chat-header">Hỗ trợ Cat Shop</div>
+        <div id="chat-body">
+            <div class="quick-buttons">
+                <button data-msg="Tôi muốn đổi trả">Tôi muốn đổi trả</button>
+                <button data-msg="Tôi cần tư vấn size">Tôi cần tư vấn size</button>
+                <button data-msg="Vấn đề giao hàng">Vấn đề giao hàng</button>
+                <button data-msg="Khác">Khác</button>
+            </div>
+            <div id="messages">
+                <div class="bot-msg">👋 Xin chào! Bạn cần hỗ trợ gì?</div>
+            </div>
+            <div id="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Nhập tin nhắn..." />
+                <button id="send-btn">Gửi</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo_footer">
+            <img src="img/download.png" alt="" class="logo_footerIcon">
+            <p class="title_footer">Cat Shop</p>
+        </div>
+        <ul class="contact_footer">
+            <li>
+                <div class="item_title_contact">
+                    <p class="title_contact">LIÊN HỆ</p>
+
+                </div>
+                <div class="content_contact">
+                    <ul>
+                        <li class="address_contact"><i class="fa-solid fa-location-dot"></i>123 CAT SHOP Street, Q.1, TP.HCM</li>
+                        <li class="address_contact"><i class="fa-solid fa-phone"></i> Hotlline: 0123456789</li>
+                        <li class="address_contact"><i class="fa-solid fa-envelope"></i> Email: support@candystore.vn</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="item_title_contact">
+                    <p class="title_contact">CHÍNH SÁCH</p>
+
+                </div>
+                <div class="content_contact">
+                    <ul>
+                        <li class="address_contact"> <a href="src/CSTV.html">Chính sách thành viên</a></li>
+                        <li class="address_contact"><a href="src/CSDT.html">Chính sách đổi trả</a></li>
+                        <li class="address_contact"><a href="src/CSVC.html">Chính sách vận chuyển</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="item_title_contact">
+                    <p class="title_contact">ĐĂNG KÝ NHẬN TIN</p>
+                </div>
+                <div class="content_contact">
+                    <form id="newsletterForm" onsubmit="return validateEmail()" style="display: flex; flex-direction: column; gap: 10px;">
+                        <input type="email" id="newsletterEmail" placeholder="Nhập email của bạn" required style="padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+                        <button type="submit" style="padding: 8px 16px; background-color: #000; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Đăng ký</button>
+                        <p id="emailMessage" style="color: red; font-size: 0.9em;"></p>
+                    </form>
+                </div>
+            </li>
+            <li>
+                <div class="item_title_contact">
+                    <p class="title_contact">KẾT NỐI</p>
+
+                </div>
+                <div class="content_contact">
+                    <ul style="display: flex;gap:20px">
+                        <li class="address_contact"><i class="fa-brands fa-facebook"></i> </li>
+                        <li class="address_contact"><i class="fa-brands fa-instagram"></i> </li>
+                        <li class="address_contact"><i class="fa-brands fa-tiktok"></i> </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+    </footer>
+
+    <script src="js/banner.js"></script>
+
+    <script src="js/uu_dai.js"></script>
+
+    <script src="js/thoi_gian_SALE.js"></script>
+
+    <script src="js/popup.js"></script>
+
+    <script src="js/chat_box.js"></script>
+
+    <script src="js/cac_thao_tac_gio_hang.js"></script>
+    <script src="js/searchproducts.js"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            initSearch(products);
+        });
+    </script>
+
+    <script>
+        function showFashionSection() {
+            document.getElementById("productSection").style.display = "none";
+            document.getElementById("fashionSection").style.display = "block";
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

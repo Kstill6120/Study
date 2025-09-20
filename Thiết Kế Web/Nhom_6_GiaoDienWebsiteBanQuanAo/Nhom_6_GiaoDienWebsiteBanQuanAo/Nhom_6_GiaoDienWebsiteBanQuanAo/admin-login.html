@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng Nhập Admin</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f7f9fc;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .login-container {
+      max-width: 500px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    .alert {
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      color: #721c24;
+      background-color: #f8d7da;
+      border: 1px solid #f5c6cb;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Đăng Nhập Admin</h1>
+    
+    <div id="loginMessage" style="display: none;"></div>
+    
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="username">Tên đăng nhập</label>
+        <input type="text" id="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Mật khẩu</label>
+        <input type="password" id="password" required>
+      </div>
+      <button type="submit">Đăng nhập</button>
+    </form>
+  </div>
+
+  <script>
+    // Tài khoản admin cố định
+    const ADMIN_ACCOUNT = {
+      username: "admin",
+      password: "admin123",
+      role: "admin"
+    };
+
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+      
+      // Kiểm tra thông tin đăng nhập
+      if (username === ADMIN_ACCOUNT.username && password === ADMIN_ACCOUNT.password) {
+        // Lưu thông tin đăng nhập vào sessionStorage
+        sessionStorage.setItem('adminUser', JSON.stringify(ADMIN_ACCOUNT));
+        
+        // Chuyển hướng đến trang quản trị
+        window.location.href = 'admin.html';
+      } else {
+        showMessage('Tên đăng nhập hoặc mật khẩu không đúng!');
+      }
+    });
+    
+    function showMessage(message) {
+      const messageDiv = document.getElementById('loginMessage');
+      messageDiv.innerHTML = `<div class="alert">${message}</div>`;
+      messageDiv.style.display = 'block';
+    }
+    
+    // Kiểm tra nếu đã đăng nhập thì chuyển hướng
+    document.addEventListener('DOMContentLoaded', () => {
+      const adminUser = JSON.parse(sessionStorage.getItem('adminUser'));
+      if (adminUser) {
+        window.location.href = 'admin.html';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿@using B3.Models;
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MHXacNhan</title>
+</head>
+<body>
+    <div>
+        <h1>ARE YOU ...</h1>
+        @{ var info = Session["info"] as Information; }
+        @if (info != null)
+        {
+            <p>your name is : @info.FullName</p>
+            <p>your id student is : @info.IdStudent</p>
+            <p>your email is : @info.Email</p>
+            <p>your file image is :</p>
+    <img src="~/Assets/Image/@info.FileImage" />
+            <p>your note is : @info.Note</p>
+            <p>check1 : @info.Check1</p>
+            <p>check2 : @info.Check2</p>
+            <p>check3 : @info.Check3</p>
+            <p>choose work time : @info.ChooseWorkTime</p>
+            <p>select course : @info.SelectCourse</p>
+        }
+        else
+        {
+            <p>No information found in session.</p>
+        }
+    </div>
+</body>
+</html>

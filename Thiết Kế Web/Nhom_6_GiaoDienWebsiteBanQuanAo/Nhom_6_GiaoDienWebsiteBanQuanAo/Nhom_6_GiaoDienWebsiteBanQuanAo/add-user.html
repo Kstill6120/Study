@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản Lý Người Dùng</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f7f9fc;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+    .user-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .user-table th, .user-table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+    .user-table th {
+      background-color: #3498db;
+      color: white;
+      font-weight: 500;
+    }
+    .user-table tr:hover {
+      background-color: #f5f5f5;
+    }
+    .action-btn {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      margin-right: 5px;
+    }
+    .edit-btn {
+      background-color: #f39c12;
+      color: white;
+    }
+    .delete-btn {
+      background-color: #e74c3c;
+      color: white;
+    }
+    .nav {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .nav a {
+      color: #3498db;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+    }
+    .nav a:hover {
+      text-decoration: underline;
+    }
+    .search-box {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .search-box input {
+      padding: 10px;
+      width: 300px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Quản Lý Người Dùng</h1>
+    
+    <div class="nav">
+      <a href="admin.html">Trang Quản Trị</a>
+      <a href="index.html">Về Trang Chủ</a>
+      <a href="#" onclick="logout()">Đăng Xuất</a>
+    </div>
+    
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Tìm kiếm người dùng...">
+    </div>
+    
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Tên đăng nhập</th>
+          <th>Email</th>
+          <th>Mật khẩu</th>
+          <th>Ngày đăng ký</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody id="usersTable">
+        <!-- Dữ liệu sẽ được thêm bằng JavaScript -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    // Tải danh sách người dùng
+    function loadUsers(searchTerm = '') {
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      const table = document.getElementById('usersTable');
+      table.innerHTML = '';
+      
+      // Lọc người dùng nếu có từ khóa tìm kiếm
+      const filteredUsers = searchTerm 
+        ? users.filter(user => 
+            user.username.toLowerCase().includes(searchTerm.toLowerCase()) || 
+            user.email.toLowerCase().includes(searchTerm.toLowerCase()))
+        : users;
+      
+      // Sắp xếp theo ngày đăng ký (mới nhất đầu tiên)
+      filteredUsers.sort((a, b) => new Date(b.registeredAt) - new Date(a.registeredAt));
+      
+      filteredUsers.forEach(user => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${user.id}</td>
+          <td>${user.username}</td>
+          <td>${user.email || 'Chưa có'}</td>
+          <td>${user.password}</td>
+          <td>${new Date(user.registeredAt).toLocaleString()}</td>
+          <td>
+            <button class="action-btn edit-btn" onclick="editUser(${user.id})">Sửa</button>
+            <button class="action-btn delete-btn" onclick="deleteUser(${user.id})">Xóa</button>
+          </td>
+        `;
+        table.appendChild(row);
+      });
+    }
+    
+    // Xóa người dùng
+    function deleteUser(userId) {
+      if (!confirm('Bạn có chắc chắn muốn xóa người dùng này?')) return;
+      
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+      users = users.filter(user => user.id !== userId);
+      localStorage.setItem('users', JSON.stringify(users));
+      alert('Đã xóa người dùng thành công');
+      loadUsers();
+    }
+    
+    // Sửa thông tin người dùng
+    function editUser(userId) {
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+      const user = users.find(u => u.id === userId);
+      
+      if (user) {
+        const newUsername = prompt('Tên đăng nhập mới:', user.username);
+        if (newUsername === null) return;
+        
+        const newEmail = prompt('Email mới:', user.email || '');
+        
+        const newPassword = prompt('Mật khẩu mới (để trống nếu không đổi):');
+        
+        // Cập nhật thông tin
+        user.username = newUsername;
+        user.email = newEmail;
+        if (newPassword) user.password = newPassword;
+        
+        localStorage.setItem('users', JSON.stringify(users));
+        alert('Đã cập nhật thông tin người dùng');
+        loadUsers();
+      }
+    }
+    
+    // Đăng xuất
+    function logout() {
+      sessionStorage.removeItem('adminUser');
+      window.location.href = 'admin-login.html';
+    }
+    
+    // Tìm kiếm người dùng
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+      loadUsers(e.target.value);
+    });
+    
+    // Kiểm tra đăng nhập admin
+    function checkAdminLogin() {
+      const adminUser = JSON.parse(sessionStorage.getItem('adminUser'));
+      if (!adminUser) {
+        alert('Bạn cần đăng nhập để truy cập trang này');
+        window.location.href = 'admin-login.html';
+      }
+    }
+    
+    // Khởi tạo khi trang được tải
+    document.addEventListener('DOMContentLoaded', () => {
+      checkAdminLogin();
+      loadUsers();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý đơn hàng - Cat Shop</title>
+    <link rel="stylesheet" href="src/css/style-admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <h1>Quản lý đơn hàng</h1>
+        
+        <div class="orders-list">
+            <div class="order-header">
+                <span>Mã đơn</span>
+                <span>Ngày đặt</span>
+                <span>Số sản phẩm</span>
+                <span>Tổng tiền</span>
+                <span>Trạng thái</span>
+            </div>
+            <div id="orders-container">
+                <!-- Đơn hàng sẽ được hiển thị ở đây -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ordersContainer = document.getElementById('orders-container');
+            const orders = JSON.parse(localStorage.getItem('orders')) || [];
+            
+            if (orders.length === 0) {
+                ordersContainer.innerHTML = '<p class="no-orders">Chưa có đơn hàng nào</p>';
+                return;
+            }
+            
+            let html = '';
+            orders.forEach(order => {
+                html += `
+                    <div class="order-item">
+                        <span>#${order.id}</span>
+                        <span>${new Date(order.date).toLocaleString()}</span>
+                        <span>${order.items.length} sản phẩm</span>
+                        <span>${order.total.toLocaleString()} VND</span>
+                        <span class="status pending">Đang xử lý</span>
+                    </div>
+                `;
+            });
+            
+            ordersContainer.innerHTML = html;
+        });
+    </script>
+</body>
+</html>	

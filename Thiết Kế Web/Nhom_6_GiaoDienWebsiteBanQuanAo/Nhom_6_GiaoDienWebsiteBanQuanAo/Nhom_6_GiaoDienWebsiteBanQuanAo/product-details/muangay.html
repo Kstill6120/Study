@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Trang Thanh Toán</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      color: #000;
+    }
+    .checkout-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .payment-option {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #dee2e6;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .payment-option:hover {
+      border-color: #007bff;
+      background-color: #e9f7fe;
+    }
+    .payment-option.selected {
+      border-color: #007bff;
+      background-color: #d4edfa;
+    }
+    .radio-circle {
+      width: 18px;
+      height: 18px;
+      border: 2px solid #007bff;
+      border-radius: 50%;
+    }
+    .payment-option.selected .radio-circle {
+      background-color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="checkout-title">Trang Thanh Toán</h1>
+
+    <!-- 1. Thông tin giao hàng -->
+    <div class="card mb-4 p-3">
+      <h5>1. Thông Tin Giao Hàng</h5>
+      <p>Vui lòng <a href="../add-user.html">đăng nhập</a> để đặt hàng.</p>
+    </div>
+
+    <!-- 2. Phương thức thanh toán -->
+    <div class="card mb-4 p-3">
+      <h5>2. Phương Thức Thanh Toán</h5>
+      <div class="d-flex flex-column gap-3 payment-methods">
+        <div class="payment-option selected" onclick="selectPayment(this)">
+          <span><i class="bi bi-truck me-2"></i>Thanh toán khi nhận hàng (COD)</span>
+          <div class="radio-circle"></div>
+        </div>
+        <div class="payment-option" onclick="selectPayment(this)">
+          <span><img src="../img/vnpay.png" height="20" class="me-2">Thanh toán VNPAY</span>
+          <div class="radio-circle"></div>
+        </div>
+        <div class="payment-option" onclick="selectPayment(this)">
+          <span><img src="../img/momo.png" height="20" class="me-2">Ví MoMo</span>
+          <div class="radio-circle"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Tổng tiền -->
+    <div class="card mb-4 p-3">
+      <h5>3. Thông Tin Đơn Hàng</h5>
+      <p><strong>Sản phẩm:</strong> <span id="product-name"></span></p>
+      <p><strong>Số lượng:</strong> <span id="product-qty"></span></p>
+	  <p><strong>Phí vận chuyển:</strong> <span class="text-success">Miễn phí toàn quốc</span></p>
+      <p><strong>Tổng tiền:</strong> <span id="product-total" class="text-danger fw-bold"></span></p>
+    </div>
+
+    <!-- 4. Nút đặt hàng -->
+    <div class="text-center">
+      <button class="btn btn-primary btn-lg">Đặt Hàng</button>
+    </div>
+  </div>
+
+  <script>
+    function selectPayment(el) {
+      document.querySelectorAll('.payment-option').forEach(opt => opt.classList.remove('selected'));
+      el.classList.add('selected');
+    }
+
+    // Load dữ liệu từ URL
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name') || 'Không rõ';
+    const qty = parseInt(params.get('qty')) || 1;
+    const price = parseInt(params.get('price')) || 0;
+    const total = price * qty;
+
+    document.getElementById('product-name').innerText = name;
+    document.getElementById('product-qty').innerText = qty;
+    document.getElementById('product-total').innerText = total.toLocaleString('vi-VN') + '₫';
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

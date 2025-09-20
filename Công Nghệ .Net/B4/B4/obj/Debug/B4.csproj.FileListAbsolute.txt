@@ -1,0 +1,24 @@
+E:\LuuDuLieuSinhVien\hp\B4\B4\B4\bin\Debug\B4.exe.config
+E:\LuuDuLieuSinhVien\hp\B4\B4\B4\bin\Debug\B4.exe
+E:\LuuDuLieuSinhVien\hp\B4\B4\B4\bin\Debug\B4.pdb
+E:\LuuDuLieuSinhVien\hp\B4\B4\B4\obj\Debug\B4.csprojResolveAssemblyReference.cache
+E:\LuuDuLieuSinhVien\hp\B4\B4\B4\obj\Debug\B4.Form1.resources
+E:\LuuDuLieuSinhVien\hp\B4\B4\B4\obj\Debug\B4.Properties.Resources.resources
+E:\LuuDuLieuSinhVien\hp\B4\B4\B4\obj\Debug\B4.csproj.GenerateResource.Cache
+E:\LuuDuLieuSinhVien\hp\B4\B4\B4\obj\Debug\B4.exe
+E:\LuuDuLieuSinhVien\hp\B4\B4\B4\obj\Debug\B4.pdb
+E:\LuuDuLieuSinhVien\hp\B4\B4\B4\obj\Debug\B4.Form2.resources
+E:\LuuDuLieuSinhVien\hp\B4\B4\B4\obj\Debug\B4.Form3.resources
+D:\Study\Công Nghệ .Net\B4\B4\bin\Debug\B4.exe.config
+D:\Study\Công Nghệ .Net\B4\B4\bin\Debug\B4.exe
+D:\Study\Công Nghệ .Net\B4\B4\bin\Debug\B4.pdb
+D:\Study\Công Nghệ .Net\B4\B4\obj\Debug\B4.csproj.AssemblyReference.cache
+D:\Study\Công Nghệ .Net\B4\B4\obj\Debug\B4.Form1.resources
+D:\Study\Công Nghệ .Net\B4\B4\obj\Debug\B4.Form2.resources
+D:\Study\Công Nghệ .Net\B4\B4\obj\Debug\B4.Form3.resources
+D:\Study\Công Nghệ .Net\B4\B4\obj\Debug\B4.Form4.resources
+D:\Study\Công Nghệ .Net\B4\B4\obj\Debug\B4.Properties.Resources.resources
+D:\Study\Công Nghệ .Net\B4\B4\obj\Debug\B4.csproj.GenerateResource.cache
+D:\Study\Công Nghệ .Net\B4\B4\obj\Debug\B4.csproj.CoreCompileInputs.cache
+D:\Study\Công Nghệ .Net\B4\B4\obj\Debug\B4.exe
+D:\Study\Công Nghệ .Net\B4\B4\obj\Debug\B4.pdb

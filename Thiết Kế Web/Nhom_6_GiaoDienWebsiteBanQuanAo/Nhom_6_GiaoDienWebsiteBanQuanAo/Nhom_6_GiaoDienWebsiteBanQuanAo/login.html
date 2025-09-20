@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f7f9fc;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .login-container {
+      max-width: 500px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    .register-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .register-link a {
+      color: #3498db;
+      text-decoration: none;
+    }
+    .alert {
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      color: #721c24;
+      background-color: #f8d7da;
+      border: 1px solid #f5c6cb;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Đăng nhập</h1>
+    
+    <div id="loginMessage" style="display: none;"></div>
+    
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="loginUsername">Tên đăng nhập hoặc Email</label>
+        <input type="text" id="loginUsername" required>
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">Mật khẩu</label>
+        <input type="password" id="loginPassword" required minlength="6">
+      </div>
+      <button type="submit">Đăng nhập</button>
+    </form>
+    <div class="register-link">
+      Chưa có tài khoản? <a href="register.html">Đăng ký ngay</a>
+    </div>
+    <div class="register-link">
+      <a href="admin-login.html">Đăng nhập cho quản trị viên</a>
+    </div>
+  </div>
+
+  <script>
+    // Kiểm tra nếu đã đăng nhập thì chuyển hướng về trang chủ
+    document.addEventListener('DOMContentLoaded', () => {
+      const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+      if (isLoggedIn) {
+        window.location.href = 'index.html';
+      }
+    });
+
+    // Xử lý đăng nhập
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const usernameOrEmail = document.getElementById('loginUsername').value.trim();
+      const password = document.getElementById('loginPassword').value;
+      
+      // Validate email (nếu người dùng nhập email)
+      if (usernameOrEmail.includes('@')) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(usernameOrEmail)) {
+          showMessage('Email không hợp lệ!');
+          return;
+        }
+      }
+
+      // Kiểm tra mật khẩu có đủ 6 ký tự không
+      if (password.length < 6) {
+        showMessage('Mật khẩu phải có ít nhất 6 ký tự!');
+        return;
+      }
+
+      // Lấy danh sách user từ localStorage
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      
+      // Tìm user (so sánh username/email và mật khẩu)
+      const user = users.find(u => 
+        (u.username === usernameOrEmail || u.email === usernameOrEmail) && 
+        u.password === password // ❌ Lưu ý: Nên dùng bcrypt trong thực tế
+      );
+      
+      if (user) {
+        // Lưu thông tin đăng nhập
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        
+        // Chuyển hướng về trang chủ
+        window.location.href = 'index.html';
+      } else {
+        showMessage('Tên đăng nhập/email hoặc mật khẩu không đúng!');
+      }
+    });
+
+    // Hiển thị thông báo lỗi
+    function showMessage(message) {
+      const messageDiv = document.getElementById('loginMessage');
+      messageDiv.innerHTML = `<div class="alert">${message}</div>`;
+      messageDiv.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+﻿@model B3.Models.User
+@{
+    ViewBag.Title = "Đăng Nhập";
+}
+<style>
+    body {
+        background: #f8f9fa;
+        font-family: Arial, sans-serif;
+    }
+
+    .container-login {
+        max-width: 350px;
+        margin: 60px auto;
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    h2 {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-control {
+        border-radius: 8px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        width: 100%;
+        font-size: 14px;
+    }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0,123,255,0.5);
+            outline: none;
+        }
+
+    .text-danger {
+        font-size: 13px;
+        color: red;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        border-radius: 8px;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        transition: 0.3s;
+        width: 100%;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.02);
+        }
+
+    .form-check {
+        margin-top: 10px;
+    }
+
+
+</style>
+
+<div class="container-login">
+    <h2 style="text-align:center">ĐĂNG NHẬP</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <label>UserName</label>
+            @Html.TextBoxFor(m => m.FullName, new { @class = "form-control", placeholder = "Enter Your UserName" })
+            @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">                                               
+            <label>Password</label>
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Enter Your Password" })
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" id="remember" class="form-check-input" />
+            <label class="form-check-label" for="remember">Remember Me</label>
+        </div>
+
+        <br />
+        <button type="submit" class="btn btn-primary btn-block">ĐĂNG NHẬP</button>
+    }
+</div>
+

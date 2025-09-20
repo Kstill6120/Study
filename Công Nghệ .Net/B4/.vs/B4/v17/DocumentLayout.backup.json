@@ -1,0 +1,91 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Study\\C\u00F4ng Ngh\u1EC7 .Net\\B4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AF6D4352-E1E4-4EC3-BF35-054454A827A4}|B4\\B4.csproj|d:\\study\\c\u00F4ng ngh\u1EC7 .net\\b4\\b4\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF6D4352-E1E4-4EC3-BF35-054454A827A4}|B4\\B4.csproj|solutionrelative:b4\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF6D4352-E1E4-4EC3-BF35-054454A827A4}|B4\\B4.csproj|d:\\study\\c\u00F4ng ngh\u1EC7 .net\\b4\\b4\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AF6D4352-E1E4-4EC3-BF35-054454A827A4}|B4\\B4.csproj|solutionrelative:b4\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF6D4352-E1E4-4EC3-BF35-054454A827A4}|B4\\B4.csproj|d:\\study\\c\u00F4ng ngh\u1EC7 .net\\b4\\b4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF6D4352-E1E4-4EC3-BF35-054454A827A4}|B4\\B4.csproj|solutionrelative:b4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF6D4352-E1E4-4EC3-BF35-054454A827A4}|B4\\B4.csproj|d:\\study\\c\u00F4ng ngh\u1EC7 .net\\b4\\b4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF6D4352-E1E4-4EC3-BF35-054454A827A4}|B4\\B4.csproj|solutionrelative:b4\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Study\\C\u00F4ng Ngh\u1EC7 .Net\\B4\\B4\\Program.cs",
+              "RelativeDocumentMoniker": "B4\\Program.cs",
+              "ToolTip": "D:\\Study\\C\u00F4ng Ngh\u1EC7 .Net\\B4\\B4\\Program.cs",
+              "RelativeToolTip": "B4\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-20T11:22:04.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\Study\\C\u00F4ng Ngh\u1EC7 .Net\\B4\\B4\\Form1.cs",
+              "RelativeDocumentMoniker": "B4\\Form1.cs",
+              "ToolTip": "D:\\Study\\C\u00F4ng Ngh\u1EC7 .Net\\B4\\B4\\Form1.cs",
+              "RelativeToolTip": "B4\\Form1.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAIwEgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-20T09:00:07.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form4.cs",
+              "DocumentMoniker": "D:\\Study\\C\u00F4ng Ngh\u1EC7 .Net\\B4\\B4\\Form4.cs",
+              "RelativeDocumentMoniker": "B4\\Form4.cs",
+              "ToolTip": "D:\\Study\\C\u00F4ng Ngh\u1EC7 .Net\\B4\\B4\\Form4.cs*",
+              "RelativeToolTip": "B4\\Form4.cs*",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAAALQAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-20T07:51:27.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form4.cs [Design]",
+              "DocumentMoniker": "D:\\Study\\C\u00F4ng Ngh\u1EC7 .Net\\B4\\B4\\Form4.cs",
+              "RelativeDocumentMoniker": "B4\\Form4.cs",
+              "ToolTip": "D:\\Study\\C\u00F4ng Ngh\u1EC7 .Net\\B4\\B4\\Form4.cs [Design]*",
+              "RelativeToolTip": "B4\\Form4.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-20T07:51:14.523Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

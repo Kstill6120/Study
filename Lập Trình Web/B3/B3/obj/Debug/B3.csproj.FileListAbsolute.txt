@@ -1,0 +1,39 @@
+E:\LuuDuLieuSinhVien\hp\B3\B3\bin\B3.dll.config
+E:\LuuDuLieuSinhVien\hp\B3\B3\bin\B3.dll
+E:\LuuDuLieuSinhVien\hp\B3\B3\bin\B3.pdb
+E:\LuuDuLieuSinhVien\hp\B3\B3\bin\System.Web.Helpers.dll
+E:\LuuDuLieuSinhVien\hp\B3\B3\bin\System.Web.Mvc.dll
+E:\LuuDuLieuSinhVien\hp\B3\B3\bin\System.Web.Razor.dll
+E:\LuuDuLieuSinhVien\hp\B3\B3\bin\System.Web.Webpages.Deployment.dll
+E:\LuuDuLieuSinhVien\hp\B3\B3\bin\System.Web.Webpages.dll
+E:\LuuDuLieuSinhVien\hp\B3\B3\bin\System.Web.Webpages.Razor.dll
+E:\LuuDuLieuSinhVien\hp\B3\B3\bin\System.Web.Razor.xml
+E:\LuuDuLieuSinhVien\hp\B3\B3\bin\System.Web.Webpages.xml
+E:\LuuDuLieuSinhVien\hp\B3\B3\bin\System.Web.Webpages.Deployment.xml
+E:\LuuDuLieuSinhVien\hp\B3\B3\bin\System.Web.Webpages.Razor.xml
+E:\LuuDuLieuSinhVien\hp\B3\B3\bin\System.Web.Helpers.xml
+E:\LuuDuLieuSinhVien\hp\B3\B3\bin\System.Web.Mvc.xml
+E:\LuuDuLieuSinhVien\hp\B3\B3\obj\Debug\B3.csprojResolveAssemblyReference.cache
+E:\LuuDuLieuSinhVien\hp\B3\B3\obj\Debug\B3.dll
+E:\LuuDuLieuSinhVien\hp\B3\B3\obj\Debug\B3.pdb
+D:\Study\Lập Trình Web\B3\B3\bin\B3.dll.config
+D:\Study\Lập Trình Web\B3\B3\bin\B3.dll
+D:\Study\Lập Trình Web\B3\B3\bin\B3.pdb
+D:\Study\Lập Trình Web\B3\B3\bin\System.Web.Helpers.dll
+D:\Study\Lập Trình Web\B3\B3\bin\System.Web.Mvc.dll
+D:\Study\Lập Trình Web\B3\B3\bin\System.Web.Razor.dll
+D:\Study\Lập Trình Web\B3\B3\bin\System.Web.Webpages.Deployment.dll
+D:\Study\Lập Trình Web\B3\B3\bin\System.Web.Webpages.dll
+D:\Study\Lập Trình Web\B3\B3\bin\System.Web.Webpages.Razor.dll
+D:\Study\Lập Trình Web\B3\B3\bin\System.Web.Razor.xml
+D:\Study\Lập Trình Web\B3\B3\bin\System.Web.Webpages.xml
+D:\Study\Lập Trình Web\B3\B3\bin\System.Web.Webpages.Deployment.xml
+D:\Study\Lập Trình Web\B3\B3\bin\System.Web.Webpages.Razor.xml
+D:\Study\Lập Trình Web\B3\B3\bin\System.Web.Helpers.xml
+D:\Study\Lập Trình Web\B3\B3\bin\System.Web.Mvc.xml
+D:\Study\Lập Trình Web\B3\B3\obj\Debug\B3.csproj.AssemblyReference.cache
+D:\Study\Lập Trình Web\B3\B3\obj\Debug\B3.csproj.CoreCompileInputs.cache
+D:\Study\Lập Trình Web\B3\B3\obj\Debug\B3.csproj.Up2Date
+D:\Study\Lập Trình Web\B3\B3\obj\Debug\B3.dll
+D:\Study\Lập Trình Web\B3\B3\obj\Debug\B3.pdb
+D:\Study\Lập Trình Web\B3\B3\bin\Microsoft.Web.Infrastructure.dll

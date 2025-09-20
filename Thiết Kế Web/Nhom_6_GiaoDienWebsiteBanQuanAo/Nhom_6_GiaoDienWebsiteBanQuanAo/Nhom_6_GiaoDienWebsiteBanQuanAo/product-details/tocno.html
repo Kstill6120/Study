@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Cài tóc nơ vải</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="../img/toc1.jpg" alt="Cài tóc nơ vải" class="img-fluid rounded" style="height: 450px; object-fit: cover;">
+    </div>
+    <div class="col-md-6">
+      <h3>Cài tóc nơ vải</h3>
+      <p><strong class="text-danger fs-4">19,000₫</strong></p>
+      <p><span class="badge bg-success">Còn hàng</span></p>
+      <p><strong>Màu sắc:</strong> Nâu vintage</p>
+      <p><strong>Kích thước:</strong></p>
+      <div class="btn-group mb-3">
+        <button class="btn btn-outline-dark">Free size</button>
+      </div>
+      <div class="mb-3">
+        <label class="form-label"><strong>Số lượng:</strong></label>
+        <div class="input-group" style="max-width: 150px;">
+          <button class="btn btn-outline-secondary" onclick="decreaseQty()">-</button>
+          <input type="text" class="form-control text-center" id="quantity" value="1">
+          <button class="btn btn-outline-secondary" onclick="increaseQty()">+</button>
+        </div>
+      </div>
+      <div class="d-flex gap-3 mb-3">
+        <button class="btn btn-dark" onclick="addToCart()">Thêm vào giỏ</button>
+        <button class="btn btn-outline-dark" onclick="buyNow()">Mua ngay</button>
+      </div>
+      <p id="cart-message" class="text-success" style="display: none;">✅ Đã thêm vào giỏ hàng!</p>
+
+      <div>
+        <a class="text-decoration-underline text-dark" data-bs-toggle="collapse" href="#descNoVai" role="button">
+          Xem chi tiết
+        </a>
+        <div class="collapse mt-3" id="descNoVai">
+          <h5>MÔ TẢ SẢN PHẨM</h5>
+          <ul>
+            <li>Chất liệu: Vải cotton mềm</li>
+            <li>Thiết kế: Nơ gập hai lớp</li>
+            <li>Chi tiết: Phù hợp mọi kiểu tóc</li>
+            <li>Phong cách: Học đường – nữ tính</li>
+            <li>Thương hiệu: Cat Shop</li>
+          </ul>
+          <p>Chiếc cài tóc nơ vải nhỏ nhắn giúp bạn thêm phần dịu dàng, đặc biệt phù hợp với phong cách học sinh, vintage hoặc những ngày cần sự nhẹ nhàng.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Chính sách -->
+<div class="mt-5 row text-center">
+  <div class="col-md-3">
+    <img src="../img/icondoi.png" alt="Đổi trả" style="height: 40px;">
+    <p class="mt-2">Đổi trả tận nhà theo<br>chính sách vận chuyển</p>
+  </div>
+  <div class="col-md-3">
+    <img src="../img/iconbaohanh.png" alt="Bảo hành" style="height: 40px;">
+    <p class="mt-2">Bảo hành trong<br>vòng 30 ngày</p>
+  </div>
+  <div class="col-md-3">
+    <img src="../img/iconhotline.png" alt="Hotline" style="height: 40px;">
+    <p class="mt-2">Hotline: 0123456789</p>
+  </div>
+  <div class="col-md-3">
+    <img src="../img/iconvoucher.png" alt="Ưu đãi" style="height: 40px;">
+    <p class="mt-2">Có cộng dồn ưu đãi cho<br>khách hàng là thành viên</p>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function increaseQty() {
+    let qty = document.getElementById("quantity");
+    qty.value = parseInt(qty.value) + 1;
+  }
+
+  function decreaseQty() {
+    let qty = document.getElementById("quantity");
+    if (parseInt(qty.value) > 1) qty.value = parseInt(qty.value) - 1;
+  }
+
+  function addToCart() {
+    const msg = document.getElementById("cart-message");
+    msg.style.display = "block";
+    setTimeout(() => {
+      msg.style.display = "none";
+    }, 2000);
+  }
+
+  function buyNow() {
+    const productName = "Cài tóc nơ vải";
+    const productPrice = 19000;
+    const qty = document.getElementById("quantity").value;
+    const url = `muangay.html?name=${encodeURIComponent(productName)}&price=${productPrice}&qty=${qty}`;
+    window.location.href = url;
+  }
+</script>
+</body>
+</html>

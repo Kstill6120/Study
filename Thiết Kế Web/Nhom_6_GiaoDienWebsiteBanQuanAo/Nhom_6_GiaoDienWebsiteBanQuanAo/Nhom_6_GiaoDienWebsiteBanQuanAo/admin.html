@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trang Quản Trị</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f7f9fc;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    nav a:hover {
+      background-color: #34495e;
+    }
+    main {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .management {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .admin-links {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    .admin-links li a {
+      display: block;
+      background: #3498db;
+      color: white;
+      text-decoration: none;
+      padding: 15px;
+      border-radius: 6px;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+    .admin-links li a:hover {
+      background-color: #2980b9;
+    }
+    .alert {
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      color: #721c24;
+      background-color: #f8d7da;
+      border: 1px solid #f5c6cb;
+      text-align: center;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <header>
+    <h1>Quản Trị Hệ Thống</h1>
+    <nav>
+      <a href="index.html">Trang Chủ</a>
+      <a href="index.html" id="logoutBtn">Đăng Xuất</a>
+    </nav>
+  </header>
+
+  <main>
+    <div id="adminMessage" style="display: none;"></div>
+    
+    <section class="management">
+      <h2>Quản lý</h2>
+      <ul class="admin-links">
+        <li><a href="add-products.html">Thêm sản phẩm</a></li>
+        <li><a href="add-user.html">Quản lý người dùng</a></li>
+        <li><a href="admin-orders.html">Quản lý đơn hàng</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    // Kiểm tra quyền admin khi trang được tải
+    document.addEventListener('DOMContentLoaded', function() {
+      const adminUser = JSON.parse(sessionStorage.getItem('adminUser'));
+      const adminMessage = document.getElementById('adminMessage');
+      
+      if (!adminUser) {
+        adminMessage.innerHTML = '<div class="alert">Bạn không có quyền truy cập trang này. Vui lòng đăng nhập!</div>';
+        adminMessage.style.display = 'block';
+        
+        // Vô hiệu hóa các liên kết quản trị
+        document.querySelectorAll('.admin-links a').forEach(link => {
+          link.style.pointerEvents = 'none';
+          link.style.opacity = '0.5';
+        });
+        
+        // Chuyển hướng về trang đăng nhập sau 2 giây
+        setTimeout(() => {
+          window.location.href = 'admin-login.html';
+        }, 2000);
+      }
+    });
+
+    // Xử lý đăng xuất
+    document.getElementById('logoutBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Xóa thông tin admin khỏi sessionStorage
+      sessionStorage.removeItem('adminUser');
+      
+      // Chuyển hướng về trang đăng nhập
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

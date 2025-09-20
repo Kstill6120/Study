@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thêm Sản Phẩm</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f7f9fc;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    
+    /* Top Bar */
+    .top-bar {
+      background: #f8f9fa;
+      padding: 5px 0;
+      overflow: hidden;
+      border-bottom: 1px solid #e1e1e1;
+    }
+    
+    .marquee {
+      display: flex;
+      white-space: nowrap;
+      animation: marquee 30s linear infinite;
+    }
+    
+    .marquee span {
+      margin-right: 30px;
+      font-size: 14px;
+    }
+    
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    
+    /* Header */
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo a {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    
+    nav a:hover {
+      background-color: #34495e;
+    }
+    
+    main {
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .add-product {
+      background: #fff;
+      padding: 20px 25px;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    
+    .add-product h2 {
+      margin-top: 0;
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    #product-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    #product-form input[type="text"],
+    #product-form input[type="number"],
+    #product-form input[type="file"],
+    #product-form select {
+      padding: 12px 15px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      transition: border-color 0.3s;
+    }
+    
+    #product-form input[type="text"]:focus,
+    #product-form input[type="number"]:focus,
+    #product-form input[type="file"]:focus,
+    #product-form select:focus {
+      outline: none;
+      border-color: #3498db;
+      box-shadow: 0 0 5px rgba(52,152,219,0.5);
+    }
+
+    .checkbox-group {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      font-size: 16px;
+      flex-wrap: wrap;
+    }
+    
+    .checkbox-group label {
+      cursor: pointer;
+      user-select: none;
+    }
+    
+    .sub-checkbox-group {
+      display: flex;
+      flex-direction: column;
+      margin-left: 25px;
+      gap: 5px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    #product-form button {
+      background-color: #3498db;
+      color: white;
+      font-size: 18px;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    #product-form button:hover {
+      background-color: #2980b9;
+    }
+
+    .product-list h2 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    
+    #product-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    
+    .product-item {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .product-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    
+    .product-info {
+      flex-grow: 1;
+    }
+    
+    .product-item h3 {
+      margin: 0 0 5px 0;
+      color: #333;
+    }
+    
+    .product-price {
+      font-weight: bold;
+      color: #e74c3c;
+      margin-bottom: 10px;
+    }
+    
+    .product-labels {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 10px;
+    }
+    
+    .label-new, .label-sale, .label-new-arrival, .label-limited {
+      padding: 2px 8px;
+      font-size: 12px;
+      border-radius: 4px;
+      color: white;
+    }
+    
+    .label-new { background-color: #27ae60; }
+    .label-sale { background-color: #e74c3c; }
+    .label-new-arrival { background-color: #2980b9; }
+    .label-limited { background-color: #8e44ad; }
+    
+    .product-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+    
+    .edit-btn, .delete-btn {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    
+    .edit-btn {
+      background-color: #3498db;
+      color: white;
+    }
+    
+    .delete-btn {
+      background-color: #e74c3c;
+      color: white;
+    }
+    
+    .alert {
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      color: #721c24;
+      background-color: #f8d7da;
+      border: 1px solid #f5c6cb;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="marquee">
+      <span><i class="fa-solid fa-truck-fast"></i> FREESHIP đơn từ 250K</span>
+      <span><i class="fa-solid fa-truck-fast"></i> FREESHIP cho khách hàng lần đầu mua</span>
+      <span><i class="fa-solid fa-percent"></i> VOUCHER 10% tối đa 10K</span>
+      <span><i class="fa-solid fa-tag"></i> VOUCHER giảm 30K đơn từ 599K</span>
+      <span><i class="fa-solid fa-bolt"></i> FLASH SALE mỗi ngày</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="logo">
+      <a href="index.html" class="logo_CatShop">CAT SHOP</a>
+    </div>
+    <nav>
+      <a href="admin.html">Quản trị</a>
+      <a href="index.html" id="logoutBtn">Đăng xuất</a>
+    </nav>
+  </header>
+
+  <main>
+    <div id="adminMessage" style="display: none;"></div>
+    
+    <section class="add-product">
+      <h2>Thêm sản phẩm</h2>
+      <form id="product-form">
+        <input type="text" id="product-name" placeholder="Tên sản phẩm" required />
+        <input type="number" id="product-price" placeholder="Giá" required min="0" />
+        <input type="file" id="product-image" accept="image/*" required />
+
+        <select id="category-parent" required>
+          <option value="" disabled selected>Chọn danh mục chính</option>
+          <option value="Sản Phẩm">Sản Phẩm</option>
+          <option value="Áo nữ">Áo nữ</option>
+          <option value="Quần nữ">Quần nữ</option>
+          <option value="Phụ kiện">Phụ kiện</option>
+          <option value="Váy">Váy</option>
+        </select>
+
+        <select id="category-child" required disabled>
+          <option value="" disabled selected>Chọn danh mục con</option>
+        </select>
+
+        <div class="checkbox-group">
+          <label><input type="checkbox" id="is-new" /> Hàng mới</label>
+          <div class="sub-checkbox-group" id="new-sub-options" style="display:none;">
+            <label><input type="checkbox" id="is-new-arrival" /> Hàng mới về</label>
+            <label><input type="checkbox" id="is-limited" /> Hàng giới hạn</label>
+          </div>
+          <label><input type="checkbox" id="is-sale" /> Sale</label>
+        </div>
+
+        <button type="submit">Thêm sản phẩm</button>
+      </form>
+    </section>
+
+    <section class="product-list">
+      <h2>Danh sách sản phẩm</h2>
+      <ul id="product-list"></ul>
+    </section>
+  </main>
+
+  <script>
+    // Kiểm tra quyền admin khi trang được tải
+    document.addEventListener('DOMContentLoaded', function() {
+      const adminUser = JSON.parse(sessionStorage.getItem('adminUser'));
+      const adminMessage = document.getElementById('adminMessage');
+      
+      if (!adminUser) {
+        adminMessage.innerHTML = '<div class="alert">Bạn không có quyền truy cập trang này. Vui lòng đăng nhập!</div>';
+        adminMessage.style.display = 'block';
+        
+        // Vô hiệu hóa form
+        document.getElementById('product-form').style.pointerEvents = 'none';
+        document.getElementById('product-form').style.opacity = '0.5';
+        
+        // Chuyển hướng về trang đăng nhập sau 2 giây
+        setTimeout(() => {
+          window.location.href = 'admin-login.html';
+        }, 2000);
+      }
+    });
+
+    // Xử lý đăng xuất
+    document.getElementById('logoutBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Xóa thông tin admin khỏi sessionStorage
+      sessionStorage.removeItem('adminUser');
+      
+      // Chuyển hướng về trang chủ
+      window.location.href = 'index.html';
+    });
+
+    const categories = {
+      "Sản Phẩm": ["Tất cả sản Phẩm", "Hàng bán chạy"],
+      "Áo nữ": ["Áo Thun", "Áo Sơ Mi", "Áo croptop"],
+      "Quần nữ": ["Quần jean", "Quần short", "Quần baggy", "Quần ống rộng", "Quần tây"],
+      "Phụ kiện": ["Nón", "Túi", "Trang sức", "Mắt kính", "Phụ kiện tóc"],
+      "Váy": ["Set váy", "Chân váy", "Váy dài", "Váy ngắn"]
+    };
+
+    const parentSelect = document.getElementById('category-parent');
+    const childSelect = document.getElementById('category-child');
+    const isNewCheckbox = document.getElementById('is-new');
+    const newSubOptions = document.getElementById('new-sub-options');
+    const isNewArrivalCheckbox = document.getElementById('is-new-arrival');
+    const isLimitedCheckbox = document.getElementById('is-limited');
+
+    // Hiển thị checkbox con khi chọn hàng mới
+    isNewCheckbox.addEventListener('change', () => {
+      if (isNewCheckbox.checked) {
+        newSubOptions.style.display = 'flex';
+      } else {
+        newSubOptions.style.display = 'none';
+        isNewArrivalCheckbox.checked = false;
+        isLimitedCheckbox.checked = false;
+      }
+    });
+
+    parentSelect.addEventListener('change', function() {
+      const selectedParent = this.value;
+      childSelect.innerHTML = '<option value="" disabled selected>Chọn danh mục con</option>';
+
+      if (categories[selectedParent]) {
+        categories[selectedParent].forEach(subCat => {
+          const option = document.createElement('option');
+          option.value = subCat;
+          option.textContent = subCat;
+          childSelect.appendChild(option);
+        });
+        childSelect.disabled = false;
+      } else {
+        childSelect.disabled = true;
+      }
+    });
+
+    function renderProducts() {
+      const list = document.getElementById('product-list');
+      const products = JSON.parse(localStorage.getItem('products')) || [];
+      list.innerHTML = '';
+
+      products.forEach(p => {
+        const li = document.createElement('li');
+        li.className = 'product-item';
+        
+        let labelsHtml = '';
+        if (p.isNew) labelsHtml += '<span class="label-new">HÀNG MỚI</span>';
+        if (p.isNewArrival) labelsHtml += '<span class="label-new-arrival">HÀNG MỚI VỀ</span>';
+        if (p.isLimited) labelsHtml += '<span class="label-limited">HÀNG GIỚI HẠN</span>';
+        if (p.isSale) labelsHtml += '<span class="label-sale">SALE</span>';
+
+        li.innerHTML = `
+          <img src="${p.image}" alt="${p.name}" class="product-image">
+          <div class="product-info">
+            <h3>${p.name}</h3>
+            <div class="product-labels">${labelsHtml}</div>
+            <div class="product-price">${p.price.toLocaleString()}₫</div>
+            <div>Danh mục: ${p.categoryParent} / ${p.categoryChild}</div>
+          </div>
+          <div class="product-actions">
+            <button class="delete-btn" data-id="${p.id}">Xóa</button>
+          </div>
+        `;
+        
+        list.appendChild(li);
+      });
+      
+      // Thêm sự kiện click cho nút xóa
+      document.querySelectorAll('.delete-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          deleteProduct(this.dataset.id);
+        });
+      });
+    }
+
+    function deleteProduct(id) {
+      let products = JSON.parse(localStorage.getItem('products')) || [];
+      products = products.filter(p => p.id != id);
+      localStorage.setItem('products', JSON.stringify(products));
+      renderProducts();
+    }
+
+    document.getElementById('product-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('product-name').value.trim();
+      const price = parseFloat(document.getElementById('product-price').value);
+      const imageInput = document.getElementById('product-image');
+      const categoryParent = parentSelect.value;
+      const categoryChild = childSelect.value;
+
+      if (!name || !price || !categoryParent || !categoryChild || !imageInput.files.length) {
+        alert('Vui lòng điền đầy đủ thông tin sản phẩm.');
+        return;
+      }
+
+      const file = imageInput.files[0];
+      const reader = new FileReader();
+
+      reader.onload = (event) => {
+        const imageBase64 = event.target.result;
+
+        const newProduct = {
+          id: Date.now(),
+          name,
+          price,
+          image: imageBase64,
+          categoryParent,
+          categoryChild,
+          isNew: isNewCheckbox.checked,
+          isNewArrival: isNewArrivalCheckbox.checked,
+          isLimited: isLimitedCheckbox.checked,
+          isSale: document.getElementById('is-sale').checked
+        };
+
+        let products = JSON.parse(localStorage.getItem('products')) || [];
+        products.push(newProduct);
+        localStorage.setItem('products', JSON.stringify(products));
+
+        // reset form
+        this.reset();
+        childSelect.innerHTML = '<option value="" disabled selected>Chọn danh mục con</option>';
+        childSelect.disabled = true;
+        newSubOptions.style.display = 'none';
+
+        renderProducts();
+        alert('Đã thêm sản phẩm thành công!');
+      };
+
+      reader.readAsDataURL(file);
+    });
+
+    // Load danh sách khi trang được tải
+    renderProducts();
+  </script>
+</body>
+</html>

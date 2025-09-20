@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bờm tóc nữ</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="../img/bomtoc.jpg" alt="Bờm tóc nữ" class="img-fluid rounded" style="height: 450px; object-fit: cover;" />
+    </div>
+    <div class="col-md-6">
+      <h3>Bờm tóc nữ</h3>
+      <p><strong class="text-danger fs-4">49,000₫</strong></p>
+      <p><span class="badge bg-success">Còn hàng</span></p>
+      <p><strong>Màu sắc:</strong> Đỏ, Hồng, Trắng, Đen</p>
+      <div class="btn-group mb-3">
+        <button class="btn btn-outline-dark">Đỏ</button>
+        <button class="btn btn-outline-dark">Hồng</button>
+        <button class="btn btn-outline-dark">Trắng</button>
+        <button class="btn btn-outline-dark">Đen</button>
+      </div>
+      <div class="mb-3">
+        <label class="form-label"><strong>Số lượng:</strong></label>
+        <div class="input-group" style="max-width: 150px;">
+          <button class="btn btn-outline-secondary" onclick="decreaseQty()">-</button>
+          <input type="text" class="form-control text-center" id="quantity" value="1" />
+          <button class="btn btn-outline-secondary" onclick="increaseQty()">+</button>
+        </div>
+      </div>
+   <!-- Nút hành động -->
+<div class="d-flex gap-3 mb-4">
+  <button class="btn btn-dark" onclick="addToCart()">Thêm vào giỏ</button>
+  <button class="btn btn-outline-dark" onclick="buyNow()">Mua ngay</button>
+</div>
+
+<!-- Thông báo khi thêm vào giỏ -->
+<p class="text-success mt-2" id="cart-message" style="display:none;">
+  ✅ Đã thêm vào giỏ hàng!
+</p>
+
+      <div>
+        <a class="text-decoration-underline text-dark" data-bs-toggle="collapse" href="#descBomToc" role="button">
+          Xem chi tiết
+        </a>
+        <div class="collapse mt-3" id="descBomToc">
+          <h5>MÔ TẢ SẢN PHẨM</h5>
+          <ul>
+            <li>Chất liệu: Vải mềm, co giãn tốt</li>
+            <li>Thiết kế: Nhiều màu sắc trẻ trung, kiểu dáng đa dạng</li>
+            <li>Phù hợp: Dùng đi học, đi chơi, hoặc làm quà tặng</li>
+            <li>Thương hiệu: Cat Shop</li>
+          </ul>
+          <p>Bờm tóc giúp bạn tạo điểm nhấn nữ tính, dễ thương cho mọi kiểu tóc, phù hợp với nhiều phong cách khác nhau.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mt-5 row text-center">
+  <div class="col-md-3">
+    <img src="../img/icondoi.png" alt="Đổi trả" style="height: 40px;">
+    <p class="mt-2">Đổi trả tận nhà theo<br>chính sách vận chuyển</p>
+  </div>
+  <div class="col-md-3">
+    <img src="../img/iconbaohanh.png" alt="Bảo hành" style="height: 40px;">
+    <p class="mt-2">Bảo hành trong<br>vòng 30 ngày</p>
+  </div>
+  <div class="col-md-3">
+    <img src="../img/iconhotline.png" alt="Hotline" style="height: 40px;">
+    <p class="mt-2">Hotline: 0123456789</p>
+  </div>
+  <div class="col-md-3">
+    <img src="../img/iconvoucher.png" alt="Ưu đãi" style="height: 40px;">
+    <p class="mt-2">Có cộng dồn ưu đãi cho<br>khách hàng là thành viên</p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+  function addToCart() {
+    const msg = document.getElementById('cart-message');
+    if (msg) {
+      msg.style.display = 'block';
+      setTimeout(() => msg.style.display = 'none', 2000);
+    }
+  }
+</script>
+
+<script>
+  function increaseQty() {
+    let qty = document.getElementById("quantity");
+    qty.value = parseInt(qty.value) + 1;
+  }
+
+  function decreaseQty() {
+    let qty = document.getElementById("quantity");
+    if (parseInt(qty.value) > 1) qty.value = parseInt(qty.value) - 1;
+  }
+
+  function buyNow() {
+    const qty = document.getElementById("quantity").value;
+    const productName = "Bờm tóc nữ";
+    const productPrice = 49000;
+    window.location.href = `muangay.html?name=${encodeURIComponent(productName)}&price=${productPrice}&qty=${qty}`;
+  }
+</script>
+</body>
+</html>

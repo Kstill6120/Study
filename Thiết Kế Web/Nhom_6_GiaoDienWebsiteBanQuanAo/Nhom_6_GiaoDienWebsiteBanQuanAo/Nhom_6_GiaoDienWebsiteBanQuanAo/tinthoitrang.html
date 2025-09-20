@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin thời trang</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="shortcut icon" href="img/download.png">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f8f8;
+            color: #333;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .news-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .news-content {
+            padding: 20px;
+        }
+        .news-content h3 {
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+        .news-content p.date {
+            font-size: 0.9rem;
+            color: #888;
+            margin: 5px 0 15px;
+        }
+        .news-content p.desc {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .news-content a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .news-content a:hover {
+            text-decoration: underline;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #ff6699;
+            padding: 10px 20px;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+        .back-link:hover {
+            background-color: #ff3366;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="marquee">
+            <span><i class="fa-solid fa-truck-fast"></i>FREESHIP đơn từ 250K</span>
+            <span><i class="fa-solid fa-truck-fast"></i>FREESHIP cho khách hàng lần đầu mua</span>
+            <span>VOUCHER 10% tối đa 10K</span>
+            <span>VOUCHER giảm 30K đơn từ 599K</span>
+            <span>VOUCHER giảm 70K đơn từ 799K</span>
+            <span><i class="fa-solid fa-arrow-rotate-right"></i>Đổi trả 30 ngày</span>
+            <span><i class="fa-solid fa-percent"></i>Ưu đãi thành viên</span>
+            <span><i class="fa-solid fa-bolt"></i>FLASH SALE mỗi ngày</span>
+            <span><i class="fa-solid fa-truck"></i> Giao hàng toàn quốc</span>
+            <span><i class="fa-solid fa-headset"></i>Hỗ trợ 24/7</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html" class="logo_CatShop">CAT SHOP</a>
+        </div>
+        <div class="search-bar">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm...">
+                <button id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+            <div id="search-results" class="search-results"></div>
+        </div>
+        <ul class="header-icons">
+            <li><a href="register.html"><i class="fa fa-user"></i>Đăng ký</a></li>
+            <li><a href="login.html"><i class="fa fa-user"></i>Đăng nhập</a></li>
+            <li><button class="logout-btn" style="display: none;"><i class="fa fa-sign-out-alt"></i>Đăng xuất</button></li>
+            <li><a href="cart.html"><i class="fa fa-shopping-cart"></i>Giỏ hàng</a></li>
+        </ul>
+    </header>
+
+    <!-- Tin thời trang -->
+    <section style="color: crimson; text-align: center;">
+        <h1>TIN THỜI TRANG</h1>
+        <p>Khám phá xu hướng thời trang mới nhất từ CAT SHOP</p>
+    </section>
+    <div class="container">
+        <div class="news-grid">
+            <!-- Tin 1 -->
+            <div class="news-card">
+                <img src="img/blog1.jpg" alt="Outfit đi làm nữ" />
+                <div class="news-content">
+                    <h3>Outfit Đi Làm Cho Nữ Thanh Lịch Và Nổi Bật</h3>
+                    <p class="date">📅 28/05/2025</p>
+                    <p class="desc">Đi làm mỗi ngày không có nghĩa là nhàm chán. Tham khảo 5 kiểu phối đồ đơn giản mà thu hút dưới đây.</p>
+                    <a href="blog1.html">Xem thêm »</a>
+                </div>
+            </div>
+            <!-- Tin 2 -->
+            <div class="news-card">
+                <img src="img/blog2.jpg" alt="Phối đồ layer mùa thu" />
+                <div class="news-content">
+                    <h3>Hướng Dẫn Phối Đồ Layer Mùa Thu Cá Tính</h3>
+                    <p class="date">📅 22/05/2025</p>
+                    <p class="desc">Layering không chỉ giữ ấm mà còn thể hiện cá tính. Cùng CAT SHOP học cách phối đồ layer đẹp mà không bị “sến”.</p>
+                    <a href="blog2.html">Xem thêm »</a>
+                </div>
+            </div>
+            <!-- Tin 3 -->
+            <div class="news-card">
+                <img src="img/blog3.jpg" alt="Xu hướng màu sắc Xuân Hè 2025" />
+                <div class="news-content">
+                    <h3>Xu Hướng Màu Sắc Xuân Hè 2025 Gọi Tên Pastel và Greenery</h3>
+                    <p class="date">📅 03/06/2025</p>
+                    <p class="desc">Tông màu nhẹ nhàng như pastel, xanh lá mát mắt đang thống trị các sàn diễn thời trang. Cùng CAT SHOP ứng dụng ngay!</p>
+                    <a href="blog3.html">Xem thêm »</a>
+                </div>
+            </div>
+        </div>
+        <a href="index.html" class="back-link">← Quay lại trang chủ</a>
+    </div>
+
+    <!-- Chatbox -->
+    <div id="chat-toggle-container">
+        <div id="chat-greeting">Xin chào, CAT SHOP có thể giúp gì cho bạn?</div>
+        <button id="chat-toggle">💬</button>
+    </div>
+    <div id="chat-box">
+        <div id="chat-header">Hỗ trợ Cat Shop</div>
+        <div id="chat-body">
+            <div class="quick-buttons">
+                <button data-msg="Tôi muốn đổi trả">Tôi muốn đổi trả</button>
+                <button data-msg="Tôi cần tư vấn size">Tôi cần tư vấn size</button>
+                <button data-msg="Vấn đề giao hàng">Vấn đề giao hàng</button>
+                <button data-msg="Khác">Khác</button>
+            </div>
+            <div id="messages">
+                <div class="bot-msg">👋 Xin chào! Bạn cần hỗ trợ gì?</div>
+            </div>
+            <div id="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Nhập tin nhắn..." />
+                <button id="send-btn">Gửi</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo_footer">
+            <img src="img/download.png" alt="" class="logo_footerIcon">
+            <p class="title_footer">Cat Shop</p>
+        </div>
+        <ul class="contact_footer">
+            <li>
+                <div class="item_title_contact">
+                    <p class="title_contact">LIÊN HỆ</p>
+
+                </div>
+                <div class="content_contact">
+                    <ul>
+                        <li class="address_contact"><i class="fa-solid fa-location-dot"></i>123 CAT SHOP Street, Q.1, TP.HCM</li>
+                        <li class="address_contact"><i class="fa-solid fa-phone"></i> Hotlline: 0123456789</li>
+                        <li class="address_contact"><i class="fa-solid fa-envelope"></i> Email: support@candystore.vn</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="item_title_contact">
+                    <p class="title_contact">CHÍNH SÁCH</p>
+
+                </div>
+                <div class="content_contact">
+                    <ul>
+                        <li class="address_contact"> <a href="src/CSTV.html">Chính sách thành viên</a></li>
+                        <li class="address_contact"><a href="src/CSDT.html">Chính sách đổi trả</a></li>
+                        <li class="address_contact"><a href="src/CSVC.html">Chính sách vận chuyển</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="item_title_contact">
+                    <p class="title_contact">ĐĂNG KÝ NHẬN TIN</p>
+                </div>
+                <div class="content_contact">
+                    <form id="newsletterForm" onsubmit="return validateEmail()" style="display: flex; flex-direction: column; gap: 10px;">
+                        <input type="email" id="newsletterEmail" placeholder="Nhập email của bạn" required style="padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+                        <button type="submit" style="padding: 8px 16px; background-color: #000; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Đăng ký</button>
+                        <p id="emailMessage" style="color: red; font-size: 0.9em;"></p>
+                    </form>
+                </div>
+            </li>
+            <li>
+                <div class="item_title_contact">
+                    <p class="title_contact">KẾT NỐI</p>
+
+                </div>
+                <div class="content_contact">
+                    <ul style="display: flex;gap:20px">
+                        <li class="address_contact"><i class="fa-brands fa-facebook"></i> </li>
+                        <li class="address_contact"><i class="fa-brands fa-instagram"></i> </li>
+                        <li class="address_contact"><i class="fa-brands fa-tiktok"></i> </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+    </footer>
+
+    <script src="js/banner.js"></script>
+
+    <script src="js/uu_dai.js"></script>
+
+    <script src="js/thoi_gian_SALE.js"></script>
+
+    <script src="js/popup.js"></script>
+
+    <script src="js/chat_box.js"></script>
+
+    <script src="js/cac_thao_tac_gio_hang.js"></script>
+    <script src="js/searchproducts.js"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            initSearch(products);
+        });
+    </script>
+
+    <script>
+        function showFashionSection() {
+            document.getElementById("productSection").style.display = "none";
+            document.getElementById("fashionSection").style.display = "block";
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

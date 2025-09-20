@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin cá nhân - Cat Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f7f9fc;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+        
+        .profile-box {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        
+        .info-item {
+            margin-bottom: 20px;
+        }
+        
+        .info-item label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #34495e;
+        }
+        
+        .info-item span {
+            display: block;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        
+        .logout-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 30px;
+            text-decoration: none;
+        }
+        
+        .logout-btn:hover {
+            background: #c0392b;
+        }
+        
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #3498db;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-box">
+            <h1>Thông tin tài khoản</h1>
+            
+            <div class="info-item">
+                <label>Email</label>
+                <span id="user-email">user@example.com</span>
+            </div>
+            
+            <div class="info-item">
+                <label>Mật khẩu</label>
+                <span id="user-password">••••••••</span>
+            </div>
+            
+            <a href="#" class="logout-btn" id="logout-btn">Đăng xuất</a>
+            <a href="index.html" class="back-link">Quay lại trang chủ</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lấy thông tin user từ sessionStorage
+            const currentUser = JSON.parse(sessionStorage.getItem('currentUser')) || 
+                              JSON.parse(sessionStorage.getItem('adminUser'));
+            
+            if (!currentUser) {
+                alert('Vui lòng đăng nhập để xem thông tin');
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Hiển thị thông tin
+            document.getElementById('user-email').textContent = currentUser.email || 'Chưa cập nhật';
+            
+            // Xử lý đăng xuất
+            document.getElementById('logout-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                sessionStorage.removeItem('currentUser');
+                sessionStorage.removeItem('adminUser');
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>
